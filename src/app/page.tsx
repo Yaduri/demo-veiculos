@@ -28,12 +28,42 @@ import {
   RotateCcw,
   BadgeCheck,
   Clock,
+  ChevronDown,
 } from "lucide-react";
+
+const FAQ_ITEMS = [
+  {
+    pergunta: "Como funciona a garantia e o laudo cautelar dos veículos?",
+    resposta:
+      "Todos os nossos seminovos contam com Laudo Cautelar 100% aprovado por empresas periciais credenciadas, assegurando que o veículo nunca sofreu colisões graves, não tem passagem por leilão e possui quilometragem real auditada. Além disso, você tem garantia legal de 90 dias para motor e câmbio.",
+  },
+  {
+    pergunta: "A Serra Multimarcas aceita meu carro ou moto na troca?",
+    resposta:
+      "Sim! Avaliamos seu veículo usado com avaliação justa e competitiva de mercado. O saldo pode ser utilizado integralmente como entrada no seu seminovo selecionado, facilitando a negociação.",
+  },
+  {
+    pergunta: "É possível financiar sem entrada ou em até 60 meses?",
+    resposta:
+      "Trabalhamos em parceria com os principais bancos e financeiras (Santander, Itaú, Bradesco, BV, Pan e Safra). As opções de financiamento com ou sem entrada dependem da análise do seu CPF. Fazemos a simulação gratuita e rápida diretamente pelo WhatsApp.",
+  },
+  {
+    pergunta: "Posso reservar um veículo antes de ir até a loja em Jundiaí?",
+    resposta:
+      "Sim. Caso tenha interesse em um modelo específico, você pode entrar em contato pelo WhatsApp com nossa equipe para checar a disponibilidade e combinar uma reserva provisória até o seu test-drive na Av. Nove de Julho.",
+  },
+  {
+    pergunta: "Qual é a documentação necessária para fechar negócio?",
+    resposta:
+      "Para simulação e proposta, basta documento com foto (CNH ou RG) e comprovante de residência atualizado. Nossos veículos estão com IPVA e documentação rigorosamente em dia, prontos para transferência imediata.",
+  },
+];
 
 export default function HomePage() {
   const router = useRouter();
   const [vehicles, setVehicles] = useState<Vehicle[]>(INITIAL_VEHICLES);
   const [config, setConfig] = useState<StoreConfig>(DEFAULT_STORE_CONFIG);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   const [marca, setMarca] = useState<string>("Todas");
   const [faixaPreco, setFaixaPreco] = useState<string>("Todas");
@@ -427,6 +457,78 @@ export default function HomePage() {
                   Aceitamos seu veículo usado como entrada com avaliação justa e competitiva de mercado, além das melhores taxas de financiamento.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Perguntas Frequentes (FAQ) Section */}
+        <section
+          id="faq"
+          aria-label="Perguntas Frequentes"
+          className="mx-auto max-w-7xl px-4 sm:px-8 py-16 border-b border-slate-200/80"
+        >
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-10">
+              <span className="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                Tire suas Dúvidas
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-3">
+                Perguntas Frequentes
+              </h2>
+              <p className="text-slate-600 text-sm mt-2">
+                Confira as respostas para as principais dúvidas sobre a compra e negociação de seminovos na Serra Multimarcas.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              {FAQ_ITEMS.map((item, idx) => {
+                const isOpen = openFaqIndex === idx;
+                return (
+                  <div
+                    key={idx}
+                    className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs transition-colors"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+                      aria-expanded={isOpen}
+                      className="w-full text-left p-5 flex items-center justify-between gap-4 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+                    >
+                      <span className="font-bold text-base text-slate-900 leading-snug">
+                        {item.pergunta}
+                      </span>
+                      <ChevronDown
+                        size={18}
+                        className={`text-slate-500 shrink-0 transition-transform duration-200 ${
+                          isOpen ? "rotate-180 text-slate-900" : ""
+                        }`}
+                      />
+                    </button>
+                    {isOpen && (
+                      <div className="px-5 pb-5 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                        {item.resposta}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="mt-8 text-center bg-slate-50 border border-slate-200/80 rounded-2xl p-6">
+              <p className="text-sm font-medium text-slate-700 mb-3">
+                Ainda ficou com alguma dúvida sobre algum veículo do estoque?
+              </p>
+              <a
+                href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(
+                  `Olá, equipe da ${config.nomeLoja}! Gostaria de tirar algumas dúvidas sobre os veículos seminovos.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-colors shadow-xs"
+              >
+                <MessageCircle size={16} />
+                <span>Falar com um Consultor no WhatsApp</span>
+              </a>
             </div>
           </div>
         </section>
