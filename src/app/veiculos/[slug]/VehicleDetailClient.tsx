@@ -25,7 +25,8 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
-  Car,
+  CarFront,
+  Building2,
   Calendar,
   Layers,
   Gauge,
@@ -35,6 +36,7 @@ import {
   Hash,
   Clock3,
   Archive,
+  Clock,
   Check,
 } from "lucide-react";
 
@@ -69,7 +71,7 @@ export function VehicleDetailClient({ slug }: { slug: string }) {
         <Navbar />
         <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-8 py-20 text-center">
           <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-400">
-            <Car size={32} />
+            <CarFront size={32} />
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
             Veículo não encontrado
@@ -120,8 +122,8 @@ export function VehicleDetailClient({ slug }: { slug: string }) {
   const whatsappUrl = buildWhatsAppUrl(vehicle, config, originBase);
 
   const specsTable = [
-    { label: "Marca", value: vehicle.marca, icon: Car },
-    { label: "Modelo", value: vehicle.modelo, icon: Car },
+    { label: "Marca", value: vehicle.marca, icon: Building2 },
+    { label: "Modelo", value: vehicle.modelo, icon: CarFront },
     {
       label: "Ano Fab / Mod",
       value: `${vehicle.anoFabricacao} / ${vehicle.anoModelo}`,
@@ -387,12 +389,15 @@ export function VehicleDetailClient({ slug }: { slug: string }) {
 
               {/* Store Location Card */}
               <div className="mt-5 pt-4 border-t border-slate-100 text-xs text-slate-600">
-                <div className="flex items-center gap-1.5 font-bold text-slate-900 mb-1">
+                <div className="flex items-center gap-1.5 font-bold text-slate-900 mb-1.5">
                   <MapPin size={14} className="text-emerald-600" />
                   <span>Onde ver este veículo em Jundiaí</span>
                 </div>
-                <div>{config.nomeLoja} — {config.endereco}</div>
-                <div className="text-slate-500 mt-0.5">{config.horarioSemana}</div>
+                <div className="text-slate-700">{config.nomeLoja} — {config.endereco}</div>
+                <div className="flex items-center gap-1.5 text-slate-500 mt-1">
+                  <Clock size={13} />
+                  <span>{config.horarioSemana}</span>
+                </div>
               </div>
             </div>
           </div>

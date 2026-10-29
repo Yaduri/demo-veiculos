@@ -21,14 +21,13 @@ import {
   ArrowRight,
   MessageCircle,
   MapPin,
-  Car,
+  CarFront,
   Banknote,
   Calendar,
   Settings2,
   RotateCcw,
   BadgeCheck,
-  CheckCircle2,
-  Sparkles,
+  Clock,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -152,7 +151,7 @@ export default function HomePage() {
 
             {/* Clean Floating Search & Filter Box */}
             <div className="bg-white rounded-2xl border border-slate-200 shadow-md p-5 sm:p-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3.5">
                 {/* Search Text */}
                 <div className="sm:col-span-2 lg:col-span-1">
                   <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">
@@ -160,7 +159,7 @@ export default function HomePage() {
                   </label>
                   <div className="relative">
                     <Search
-                      size={17}
+                      size={16}
                       className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
                     />
                     <input
@@ -168,7 +167,7 @@ export default function HomePage() {
                       value={busca}
                       onChange={(e) => setBusca(e.target.value)}
                       placeholder="Ex: Compass, Corolla..."
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-slate-400 focus:outline-none transition-colors"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-slate-400 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -179,14 +178,14 @@ export default function HomePage() {
                     Marca
                   </label>
                   <div className="relative">
-                    <Car
+                    <CarFront
                       size={16}
                       className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
                     />
                     <select
                       value={marca}
                       onChange={(e) => setMarca(e.target.value)}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-8 py-2.5 text-sm text-slate-900 font-medium focus:bg-white focus:border-slate-400 focus:outline-none appearance-none cursor-pointer transition-colors"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-8 py-2 text-sm text-slate-900 font-medium focus:bg-white focus:border-slate-400 focus:outline-none appearance-none cursor-pointer transition-colors"
                     >
                       {marcasDisponiveis.map((m) => (
                         <option key={m} value={m}>
@@ -210,7 +209,7 @@ export default function HomePage() {
                     <select
                       value={faixaPreco}
                       onChange={(e) => setFaixaPreco(e.target.value)}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-8 py-2.5 text-sm text-slate-900 font-medium focus:bg-white focus:border-slate-400 focus:outline-none appearance-none cursor-pointer transition-colors"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-8 py-2 text-sm text-slate-900 font-medium focus:bg-white focus:border-slate-400 focus:outline-none appearance-none cursor-pointer transition-colors"
                     >
                       <option value="Todas">Qualquer valor</option>
                       <option value="ate-100">Até R$ 100 mil</option>
@@ -234,7 +233,7 @@ export default function HomePage() {
                     <select
                       value={anoRange}
                       onChange={(e) => setAnoRange(e.target.value)}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-8 py-2.5 text-sm text-slate-900 font-medium focus:bg-white focus:border-slate-400 focus:outline-none appearance-none cursor-pointer transition-colors"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-8 py-2 text-sm text-slate-900 font-medium focus:bg-white focus:border-slate-400 focus:outline-none appearance-none cursor-pointer transition-colors"
                     >
                       <option value="Todos">Todos os anos</option>
                       <option value="2023-2024">2023 — 2024</option>
@@ -244,12 +243,35 @@ export default function HomePage() {
                   </div>
                 </div>
 
+                {/* Câmbio */}
+                <div>
+                  <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">
+                    Câmbio
+                  </label>
+                  <div className="relative">
+                    <Settings2
+                      size={16}
+                      className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
+                    />
+                    <select
+                      value={cambio}
+                      onChange={(e) => setCambio(e.target.value)}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-8 py-2 text-sm text-slate-900 font-medium focus:bg-white focus:border-slate-400 focus:outline-none appearance-none cursor-pointer transition-colors"
+                    >
+                      <option value="Todos">Todos os câmbios</option>
+                      <option value="Automático">Automático</option>
+                      <option value="CVT">CVT</option>
+                      <option value="Manual">Manual</option>
+                    </select>
+                  </div>
+                </div>
+
                 {/* Action button */}
                 <div className="flex items-end">
                   <button
                     type="button"
                     onClick={handleGoToFullStock}
-                    className="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm py-2.5 px-4 rounded-xl shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer h-[42px]"
+                    className="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm py-2 px-4 rounded-xl shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer h-[38px]"
                   >
                     <span>Ver Veículos</span>
                     <ArrowRight size={16} />
@@ -429,13 +451,19 @@ export default function HomePage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 text-sm">
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                  <div className="font-bold text-slate-900">Endereço</div>
-                  <div className="text-slate-600 mt-1">{config.endereco}</div>
+                  <div className="flex items-center gap-1.5 font-bold text-slate-900 mb-1">
+                    <MapPin size={15} className="text-emerald-600" />
+                    <span>Endereço</span>
+                  </div>
+                  <div className="text-slate-600">{config.endereco}</div>
                   <div className="text-slate-500 text-xs mt-0.5">{config.bairroCidade}</div>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                  <div className="font-bold text-slate-900">Horário de Atendimento</div>
-                  <div className="text-slate-600 mt-1">{config.horarioSemana}</div>
+                  <div className="flex items-center gap-1.5 font-bold text-slate-900 mb-1">
+                    <Clock size={15} className="text-emerald-600" />
+                    <span>Horário de Atendimento</span>
+                  </div>
+                  <div className="text-slate-600">{config.horarioSemana}</div>
                   <div className="text-slate-500 text-xs mt-0.5">{config.horarioSabado}</div>
                 </div>
               </div>

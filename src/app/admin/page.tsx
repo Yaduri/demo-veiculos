@@ -39,10 +39,11 @@ import {
   CheckCircle2,
   Clock3,
   Archive,
-  Car,
+  CarFront,
   FileImage,
   Sparkles,
   KeyRound,
+  Mail,
   LayoutDashboard,
 } from "lucide-react";
 
@@ -365,8 +366,9 @@ export default function AdminPage() {
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1.5">
-                E-mail
+              <label className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                <Mail size={13} className="text-slate-400" />
+                <span>E-mail</span>
               </label>
               <input
                 type="email"
@@ -378,8 +380,9 @@ export default function AdminPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1.5">
-                Senha
+              <label className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                <KeyRound size={13} className="text-slate-400" />
+                <span>Senha</span>
               </label>
               <input
                 type="password"
@@ -475,7 +478,7 @@ export default function AdminPage() {
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-3.5">
             <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
               <div className="text-xs font-semibold text-slate-500 flex items-center gap-1.5">
-                <Car size={14} className="text-slate-400" />
+                <CarFront size={14} className="text-slate-400" />
                 <span>Total no Pátio</span>
               </div>
               <div className="text-2xl font-black text-slate-900 mt-2">

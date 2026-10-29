@@ -18,7 +18,7 @@ import {
   Search,
   RotateCcw,
   ArrowUpDown,
-  Car,
+  CarFront,
   Banknote,
   Calendar,
   Settings2,
@@ -265,7 +265,7 @@ function EstoqueContent() {
               Marca
             </label>
             <div className="relative">
-              <Car
+              <CarFront
                 size={15}
                 className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
               />

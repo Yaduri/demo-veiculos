@@ -15,9 +15,10 @@ import {
   Lock,
   Phone,
   Clock,
-  Car,
+  CarFront,
   Home,
-  Grid,
+  LayoutGrid,
+  MessageCircle,
 } from "lucide-react";
 
 export function Navbar() {
@@ -44,7 +45,7 @@ export function Navbar() {
     {
       href: "/estoque",
       label: `Estoque Completo (${totalStock})`,
-      icon: Grid,
+      icon: LayoutGrid,
     },
     { href: "/#diferenciais", label: "Procedência Garantida", icon: ShieldCheck },
     { href: "/#localizacao", label: "Onde Estamos", icon: MapPin },
@@ -79,7 +80,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
             >
-              <Phone size={13} />
+              <MessageCircle size={13} />
               <span>WhatsApp: (11) 99876-5432</span>
             </a>
             <span className="text-slate-700">|</span>
@@ -100,7 +101,7 @@ export function Navbar() {
           {/* Logo / Brand */}
           <Link href="/" className="no-underline flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-black text-xl shadow-sm group-hover:bg-emerald-600 transition-colors">
-              <Car size={22} />
+              <CarFront size={22} />
             </div>
             <div>
               <div className="font-extrabold text-xl sm:text-2xl text-slate-900 tracking-tight leading-none group-hover:text-emerald-700 transition-colors">
@@ -145,7 +146,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm px-4 py-2.5 rounded-xl shadow-xs transition-colors flex items-center gap-2"
             >
-              <Phone size={15} />
+              <MessageCircle size={16} />
               <span className="hidden sm:inline">Chamar no WhatsApp</span>
               <span className="sm:hidden">WhatsApp</span>
             </a>

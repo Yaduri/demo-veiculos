@@ -14,7 +14,7 @@ import {
   ShieldCheck,
   Lock,
   ChevronRight,
-  Car,
+  CarFront,
   MessageCircle,
 } from "lucide-react";
 
@@ -45,7 +45,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold">
-                <Car size={20} />
+                <CarFront size={20} />
               </div>
               <div>
                 <div className="font-extrabold text-xl text-white tracking-tight">
