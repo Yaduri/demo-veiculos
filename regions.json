@@ -1,0 +1,190 @@
+{
+  "allowUncovered": true,
+  "regions": [
+    {
+      "id": "brand-title",
+      "kind": "text",
+      "grid": "A0:F0",
+      "box": { "x": 0.025, "y": 0.035, "w": 0.568, "h": 0.058 },
+      "note": "SERRA MULTIMARCAS — SEMINOVOS SELECIONADOS headline"
+    },
+    {
+      "id": "brand-subtitle",
+      "kind": "text",
+      "grid": "A1:C1",
+      "box": { "x": 0.025, "y": 0.095, "w": 0.205, "h": 0.026 },
+      "note": "AV. NOVE DE JULHO · JUNDIAÍ / SP sub-label"
+    },
+    {
+      "id": "cautelar-stamp",
+      "kind": "control",
+      "grid": "H0:I1",
+      "box": { "x": 0.728, "y": 0.028, "w": 0.114, "h": 0.094 },
+      "note": "LAUDO CAUTELAR 100% APROVADO bordered badge"
+    },
+    {
+      "id": "admin-btn",
+      "kind": "control",
+      "grid": "I0:J0",
+      "box": { "x": 0.855, "y": 0.043, "w": 0.120, "h": 0.060 },
+      "note": "ACESSO LOJISTA outlined button"
+    },
+    {
+      "id": "header-rule",
+      "kind": "chrome",
+      "grid": "A1:J1",
+      "box": { "x": 0.025, "y": 0.148, "w": 0.950, "h": 0.012 },
+      "note": "horizontal 1px divider line"
+    },
+    {
+      "id": "filter-marca",
+      "kind": "control",
+      "grid": "A2:B2",
+      "box": { "x": 0.025, "y": 0.192, "w": 0.151, "h": 0.088 },
+      "note": "MARCA [Todas] select control"
+    },
+    {
+      "id": "filter-preco",
+      "kind": "control",
+      "grid": "B2:D2",
+      "box": { "x": 0.185, "y": 0.192, "w": 0.151, "h": 0.088 },
+      "note": "FAIXA DE PREÇO [Até R$ 150 mil] select control"
+    },
+    {
+      "id": "filter-ano",
+      "kind": "control",
+      "grid": "D2:E2",
+      "box": { "x": 0.345, "y": 0.192, "w": 0.151, "h": 0.088 },
+      "note": "ANO [2020 — 2024] select control"
+    },
+    {
+      "id": "filter-cambio",
+      "kind": "control",
+      "grid": "F2:G2",
+      "box": { "x": 0.505, "y": 0.192, "w": 0.151, "h": 0.088 },
+      "note": "CÂMBIO [Automático] select control"
+    },
+    {
+      "id": "search-input",
+      "kind": "control",
+      "grid": "G2:I2",
+      "box": { "x": 0.664, "y": 0.202, "w": 0.156, "h": 0.068 },
+      "note": "Buscar search input field"
+    },
+    {
+      "id": "lot-counter",
+      "kind": "text",
+      "grid": "I2:J2",
+      "box": { "x": 0.830, "y": 0.215, "w": 0.145, "h": 0.040 },
+      "note": "[12 VEÍCULOS NO PÁTIO] count label"
+    },
+    {
+      "id": "card1-photo",
+      "kind": "plate",
+      "grid": "A3:D7",
+      "bleed": true,
+      "box": { "x": 0.040, "y": 0.380, "w": 0.280, "h": 0.370 },
+      "note": "dark gray Jeep Compass SUV studio car photograph"
+    },
+    {
+      "id": "card1-specs",
+      "kind": "text",
+      "grid": "A7:C7",
+      "box": { "x": 0.040, "y": 0.772, "w": 0.175, "h": 0.032 },
+      "note": "28.400 KM · AUTOMÁTICO specification text"
+    },
+    {
+      "id": "card1-price",
+      "kind": "text",
+      "grid": "A8:B8",
+      "box": { "x": 0.040, "y": 0.812, "w": 0.155, "h": 0.052 },
+      "note": "R$ 138.900 price display text"
+    },
+    {
+      "id": "card1-status",
+      "kind": "control",
+      "grid": "C8:D8",
+      "box": { "x": 0.228, "y": 0.818, "w": 0.092, "h": 0.042 },
+      "note": "DISPONÍVEL green status tag"
+    },
+    {
+      "id": "card1-cta",
+      "kind": "control",
+      "grid": "A9:D9",
+      "box": { "x": 0.040, "y": 0.885, "w": 0.280, "h": 0.058 },
+      "note": "Tenho interesse neste veículo (WhatsApp) green button"
+    },
+    {
+      "id": "card2-photo",
+      "kind": "plate",
+      "grid": "D3:G7",
+      "bleed": true,
+      "box": { "x": 0.360, "y": 0.380, "w": 0.280, "h": 0.370 },
+      "note": "silver Toyota Corolla sedan studio car photograph"
+    },
+    {
+      "id": "card2-specs",
+      "kind": "text",
+      "grid": "D7:F7",
+      "box": { "x": 0.360, "y": 0.772, "w": 0.175, "h": 0.032 },
+      "note": "41.200 KM · AUTOMÁTICO specification text"
+    },
+    {
+      "id": "card2-price",
+      "kind": "text",
+      "grid": "D8:F8",
+      "box": { "x": 0.360, "y": 0.812, "w": 0.155, "h": 0.052 },
+      "note": "R$ 124.500 price display text"
+    },
+    {
+      "id": "card2-status",
+      "kind": "control",
+      "grid": "F8:G8",
+      "box": { "x": 0.556, "y": 0.818, "w": 0.086, "h": 0.042 },
+      "note": "RESERVADO amber status tag"
+    },
+    {
+      "id": "card2-cta",
+      "kind": "control",
+      "grid": "D9:G9",
+      "box": { "x": 0.360, "y": 0.885, "w": 0.280, "h": 0.058 },
+      "note": "Tenho interesse neste veículo (WhatsApp) green button"
+    },
+    {
+      "id": "card3-photo",
+      "kind": "plate",
+      "grid": "G3:J7",
+      "bleed": true,
+      "box": { "x": 0.680, "y": 0.380, "w": 0.280, "h": 0.370 },
+      "note": "white Volkswagen Nivus crossover studio car photograph"
+    },
+    {
+      "id": "card3-specs",
+      "kind": "text",
+      "grid": "G7:I7",
+      "box": { "x": 0.680, "y": 0.772, "w": 0.175, "h": 0.032 },
+      "note": "19.800 KM · AUTOMÁTICO specification text"
+    },
+    {
+      "id": "card3-price",
+      "kind": "text",
+      "grid": "G8:I8",
+      "box": { "x": 0.680, "y": 0.812, "w": 0.155, "h": 0.052 },
+      "note": "R$ 119.900 price display text"
+    },
+    {
+      "id": "card3-status",
+      "kind": "control",
+      "grid": "I8:J8",
+      "box": { "x": 0.888, "y": 0.818, "w": 0.072, "h": 0.042 },
+      "note": "VENDIDO dark red status tag"
+    },
+    {
+      "id": "card3-cta",
+      "kind": "control",
+      "grid": "G9:J9",
+      "box": { "x": 0.680, "y": 0.885, "w": 0.280, "h": 0.058 },
+      "note": "Procuro veículo semelhante outline button"
+    }
+  ]
+}
